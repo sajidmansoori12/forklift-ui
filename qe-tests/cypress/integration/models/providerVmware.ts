@@ -41,6 +41,7 @@ export class ProviderVmware extends Provider {
 
   protected runWizard(providerData: VmwareProviderData): void {
     const { name, hostname, username, password, cert } = providerData;
+    cy.wait(2*SEC);
     super.runWizard(providerData);
     this.fillName(name);
     this.fillHostname(hostname);
